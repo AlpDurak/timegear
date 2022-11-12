@@ -1,6 +1,6 @@
 {
   "name": "timegear",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Time formatting tools for JavaScript apps",
   "main": "lib/index.js",
   "scripts": {
