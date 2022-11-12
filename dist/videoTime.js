@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toVideoTime = void 0;
-const toVideoTime = (value, valueType, seperator, allowZero) => {
+const toVideoTime = (value, valueType, options) => {
     value = Math.floor(value);
-    let _ = seperator || ":";
-    allowZero = allowZero || false;
+    let _ = (options === null || options === void 0 ? void 0 : options.seperator) || ":";
+    options = {
+        allowZero: (options === null || options === void 0 ? void 0 : options.allowZero) || false,
+    };
     if (valueType === "s") {
         let hours = Math.floor(value / 60 / 60);
         let minutes = Math.floor(value / 60 - hours * 60);
@@ -15,7 +17,7 @@ const toVideoTime = (value, valueType, seperator, allowZero) => {
         // fragment versions
         let fHours = hours !== 0 ? `${hours}${_}` : "";
         let fMinutes = minutes !== 0 ? `${pMinutes}${_}` : "";
-        if (allowZero)
+        if (options.allowZero)
             return `${hours}${_}${pMinutes}${_}${pSeconds}`;
         return `${fHours}${fMinutes}${pSeconds}`;
     }
@@ -31,7 +33,7 @@ const toVideoTime = (value, valueType, seperator, allowZero) => {
         // fragment versions
         let fHours = hours !== 0 ? `${hours}${_}` : "";
         let fMinutes = minutes !== 0 ? `${pMinutes}${_}` : "";
-        if (allowZero)
+        if (options.allowZero)
             return `${hours}${_}${pMinutes}${_}${pSeconds}`;
         return `${fHours}${fMinutes}${pSeconds}`;
     }

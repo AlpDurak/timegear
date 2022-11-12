@@ -7,7 +7,9 @@ describe("toVideoTime function test", () => {
     expect(result).to.equal("2:53:10");
   });
   it("no hour test (with allowZero)", () => {
-    var result = toVideoTime(3190, "s", undefined, true);
+    var result = toVideoTime(3190, "s", {
+      allowZero: true,
+    });
     expect(result).to.equal("0:53:10");
   });
   it("no hour test (without allowZero)", () => {

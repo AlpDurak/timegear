@@ -1,14 +1,19 @@
 type ValueType = "s" | "ms";
+type Options = {
+  allowZero?: boolean;
+  seperator?: string;
+};
 
 export const toVideoTime = (
   value: number,
   valueType: ValueType,
-  seperator?: string,
-  allowZero?: boolean
+  options?: Options
 ): string => {
   value = Math.floor(value);
-  let _ = seperator || ":";
-  allowZero = allowZero || false;
+  let _ = options?.seperator || ":";
+  options = {
+    allowZero: options?.allowZero || false,
+  };
 
   if (valueType === "s") {
     let hours = Math.floor(value / 60 / 60);
@@ -23,7 +28,7 @@ export const toVideoTime = (
     let fHours = hours !== 0 ? `${hours}${_}` : "";
     let fMinutes = minutes !== 0 ? `${pMinutes}${_}` : "";
 
-    if (allowZero) return `${hours}${_}${pMinutes}${_}${pSeconds}`;
+    if (options.allowZero) return `${hours}${_}${pMinutes}${_}${pSeconds}`;
     return `${fHours}${fMinutes}${pSeconds}`;
   } else if (valueType === "ms") {
     //converted value (to seconds)
@@ -41,7 +46,7 @@ export const toVideoTime = (
     let fHours = hours !== 0 ? `${hours}${_}` : "";
     let fMinutes = minutes !== 0 ? `${pMinutes}${_}` : "";
 
-    if (allowZero) return `${hours}${_}${pMinutes}${_}${pSeconds}`;
+    if (options.allowZero) return `${hours}${_}${pMinutes}${_}${pSeconds}`;
     return `${fHours}${fMinutes}${pSeconds}`;
   } else
     throw new Error(
