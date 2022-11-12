@@ -2,12 +2,22 @@
 
 Time formatting tools for JavaScript apps
 
-## toVideoTime
+## Installation
+> npm
+```console
+npm install timegear
+```
+> yarn
+```console
+yarn add timegear
+```
 
+## toVideoTime
+#### display seconds or miliseconds in a readable video time format
 > explanation
 
 ```javascript
-toVideoTime(value, valueType, seperator);
+toVideoTime(value, valueType, seperator, allowZero);
 // value: time in seconds or miliseconds
 // valueType: type of the value you inputted (s: seconds, ms: miliseconds)
 // seperator: seperator for the videoTime string defaults to ":"
