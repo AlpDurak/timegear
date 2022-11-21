@@ -59,7 +59,7 @@ getTimeBetween(start, finish, { output });
 ```javascript
 const { getTimeBetween } = require("timegear");
 
-let start = new Date().getTime() - 1 * 60 * 1000; // 1 minute
+let start = new Date(new Date().getTime() - 1 * 60 * 1000); // 1 minute
 let finish = new Date(); // current date
 
 getTimeBetween(start, finish, { output: "m" }); // 1
