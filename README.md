@@ -64,3 +64,25 @@ let finish = new Date(); // current date
 
 getTimeBetween(start, finish, { output: "m" }); // 1
 ```
+
+## dateToToken
+
+#### converts a date to a unique token that "prevents" milisecond conflicts
+
+> explanation
+
+```javascript
+dateToToken(date);
+// date: new Date();
+```
+
+> usage
+
+```javascript
+const { dateToToken } = require("timegear");
+
+let userCreatedAt = new Date();
+
+dateToToken(userCreatedAt); // 2022112320272729102457nn10y1315.f2324pha313233m353839
+// above is an example value
+```

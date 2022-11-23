@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { getTimeBetween } = require("../dist/index");
+const { getTimeBetween } = require("../dist/lib/index");
 
 describe("timeBetween function test", () => {
   let start = new Date(new Date().getTime() - 1 * 60 * 60 * 1000);

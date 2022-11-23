@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { toVideoTime } = require("../dist/index");
+const { toVideoTime } = require("../dist/lib/index");
 
 describe("toVideoTime function test", () => {
   it("full time test", () => {

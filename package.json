@@ -1,8 +1,8 @@
 {
   "name": "timegear",
-  "version": "0.0.25",
+  "version": "0.0.3",
   "description": "Time formatting tools for JavaScript apps",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "mocha --reporter spec"
